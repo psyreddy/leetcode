@@ -4,7 +4,7 @@ public:
         int m = mat.size();
         int n = mat[0].size();
         vector<int> a {};
-        vector<vector<int>> ans {};
+        vector<vector<int>> ans (r,vector<int>(c));
         if(m*n == r*c)
         {
             for(int i=0;i<m;i++)
@@ -14,14 +14,13 @@ public:
                     a.push_back(mat[i][j]);
                 }
             }
+            int k = 0;
             for(int i=0;i<r;i++)
             {
-                vector<int> temp {};
                 for(int j=0;j<c;j++)
                 {
-                    temp.push_back(a[i*r+j]);
+                    ans[i][j] = a[k++];
                 }
-                ans.push_back(temp);
             }
             return ans;
         }
