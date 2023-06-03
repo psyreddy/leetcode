@@ -4,8 +4,8 @@ public:
         string temp = s;
         reverse(s.begin(),s.end());
         if(temp == s)
-        return 1;
-        return 0;
+        return true;
+        return false;
     }
     string base(int n,int i)
     {
@@ -22,8 +22,8 @@ public:
             if(ispal(base(n,i)))
             continue;
             else
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
 };
