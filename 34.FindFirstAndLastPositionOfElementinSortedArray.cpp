@@ -1,49 +1,49 @@
 class Solution {
 public:
-    int binsearch(vector<int> arr, int n,int x)
+    int first(vector<int>& nums, int x)
     {
+        int ans = -1;
         int l = 0;
-        int h = n-1;
+        int h = nums.size()-1;
         while(l<=h)
         {
             int m = h + ((l-h)/2);
-            if(arr[m]==x)
-            return m;
-            else if(arr[m]>x)
+            if(nums[m]==x)
             {
+                ans = m;
                 h = m-1;
             }
+            else if(nums[m]>x)
+            h = m-1;
             else
-            {
-                l = m + 1;
-            }
+            l = m+1;
         }
-        return -1;
+        return ans;
+    }
+    int last(vector<int>& nums, int x)
+    {
+        int ans = -1;
+        int l = 0;
+        int h = nums.size()-1;
+        while(l<=h)
+        {
+            int m = h + ((l-h)/2);
+            if(nums[m]==x)
+            {
+                ans = m;
+                l = m+1;
+            }
+            else if(nums[m]>x)
+            h = m-1;
+            else
+            l = m+1;
+        }
+        return ans;
     }
     vector<int> searchRange(vector<int>& nums, int x) {
-        vector <int> ans(2,0);
-        int n = nums.size();
-        int m = binsearch(nums,n,x);
-        if (m == -1)
-        {
-            ans[0] = -1;
-            ans[1] = -1;
-            return ans;
-        }
-        else
-        {
-            int a = m,b = m;
-            while(nums[a]==nums[m] && a>=0)
-            {
-                a--;
-            }
-            ans[0] = a+1;
-            while(nums[b]==nums[m] && b<n)
-            {
-                b++;
-            }
-            ans[1] = b-1;
-            return ans;
-        }
+        vector<int> a;
+        a.push_back(first(nums,x));
+        a.push_back(last(nums,x));
+        return a;
     }
 };
