@@ -1,3 +1,3 @@
 # Leetcode
 
-This repo contains my codes for Leetcode during practice
+This repository contains the codes that I used for Leetcode while I was practicing.
