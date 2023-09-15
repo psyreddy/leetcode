@@ -30,3 +30,23 @@ public:
         return temp;
     }
 };
+
+
+// Tortoise Hare Method
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while(1){
+            if(fast->next == NULL) return slow;
+            slow = slow->next;
+            fast = fast->next;
+            if(fast->next==NULL){
+                return slow;
+            }
+            fast = fast->next;
+        }
+    }
+};
