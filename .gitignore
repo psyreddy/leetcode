@@ -1,1 +1,3 @@
 .DS_Store
+.vsc-leetcode/fileToProblem.json
+.vsc-leetcode/problemToFile.json
