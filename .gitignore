@@ -1,3 +1,6 @@
 .DS_Store
-.vsc-leetcode/fileToProblem.json
-.vsc-leetcode/problemToFile.json
+*.json
+*.plist
+*yml
+*.out
+118-pascals-triangle.dSYM/Contents/Resources/DWARF/118-pascals-triangle
